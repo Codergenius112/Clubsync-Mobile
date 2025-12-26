@@ -1,0 +1,70 @@
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import StarlightBackground from '../../components/StarlightBackground';
+
+export default function PaymentScreen({ navigation }: any) {
+  return (
+    <View style={styles.container}>
+      <StarlightBackground />
+      
+      <TouchableOpacity 
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <Ionicons name="arrow-back" size={24} color="#fff" />
+      </TouchableOpacity>
+
+      <View style={styles.content}>
+        <Ionicons name="card-outline" size={64} color="#f5dd4b" />
+        <Text style={styles.title}>Payment</Text>
+        <Text style={styles.subtitle}>Coming Soon...</Text>
+        <Text style={styles.description}>
+          Secure payment with Stripe & Paystack
+        </Text>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000',
+  },
+  backButton: {
+    position: 'absolute',
+    top: 50,
+    left: 20,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 10,
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  title: {
+    color: '#fff',
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginTop: 20,
+    marginBottom: 8,
+  },
+  subtitle: {
+    color: '#f5dd4b',
+    fontSize: 18,
+    marginBottom: 8,
+  },
+  description: {
+    color: '#888',
+    fontSize: 14,
+    textAlign: 'center',
+  },
+});
