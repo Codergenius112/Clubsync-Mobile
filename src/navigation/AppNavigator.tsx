@@ -154,7 +154,7 @@ function MainTabs() {
 
 // Root Navigator
 export default function AppNavigator() {
-  const isAuthenticated = useStore((state) => state.isAuthenticated);
+  const isAuthenticated = useStore((state) => Boolean(state.isAuthenticated));
 
   return (
     <NavigationContainer>

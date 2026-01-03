@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from "react";
 import { StatusBar } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import AppNavigator from './src/navigation/AppNavigator';
+import React from "react";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const [appIsReady, setAppIsReady] = React.useState(false);
+  const [appIsReady, setAppIsReady] = useState(!!false);
 
   useEffect(() => {
     async function prepare() {
